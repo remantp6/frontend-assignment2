@@ -1,0 +1,15 @@
+.search_form .search_form_field .form-floating{
+    width: 300px;
+    margin-right: 14px;
+}
+.search_form .search_form_field .btn{
+    font-size: 18px;
+    width: 150px;
+    color: white;
+    background-color: rgb(224, 87, 29);
+    border: transparent;
+}
+.search_form .search_form_field .btn:hover{
+    background-color:  rgb(193, 97, 55);
+    color: rgb(235, 232, 232);
+}
