@@ -1,9 +1,10 @@
 import React from 'react'
+import SearchForm from './components/searchForm/SearchForm'
 
 const App = () => {
   return (
     <>
-      <h2>React project</h2>
+      <SearchForm/>
     </>
   )
 }
