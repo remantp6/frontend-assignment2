@@ -5,7 +5,11 @@ import { Link, useParams } from "react-router-dom";
 import { useGetAllUsersByUsernameQuery } from "../services/UsersApi";
 
 const UserInfo = () => {
+  
+  //  accessing URL parameters defined in the route.
   const { username } = useParams();
+
+  // Using a query hook automatically fetches data and returns query values
   const {
     data: user,
     isLoading,
@@ -42,7 +46,11 @@ const UserInfo = () => {
               <img src={user.avatar_url} alt="Avatar" />
               <h5 className="mb-0 pt-2 text-center">{user.name}</h5>
               <p className="mb-0 text-center">
-                {user.twitter_username ? <p>@{user.twitter_username}</p> : "null"}
+                {user.twitter_username ? (
+                  <p>@{user.twitter_username}</p>
+                ) : (
+                  "null"
+                )}
               </p>
             </div>
             <div className="github-details d-flex justify-content-center pt-5 mt-5">
@@ -60,19 +68,19 @@ const UserInfo = () => {
               </div>
             </div>
             <div className="user-bio-details d-flex justify-content-between">
-              <div className="userInfo-bottom-left d-flex justify-content-between m-5 p-4">
+              <div className="userInfo-bottom-left d-flex justify-content-between my-5 ms-5 me-4 p-4">
                 <div className="user-meta-left ps-2 pe-4">
                   <div className="user-meta">
                     <i className="bi bi-envelope">
                       <span className="ps-1">Email</span>
                     </i>
-                    <p>{user.email ? user.email : "null"}</p>
+                    <p>{user.email ? user.email : "No Email"}</p>
                   </div>
                   <div className="user-meta">
                     <i className="bi bi-geo-alt">
                       <span className="ps-1">Location</span>
                     </i>
-                    <p>{user.location ? user.location : "null"}</p>
+                    <p>{user.location ? user.location : "No Location"}</p>
                   </div>
                   <div className="user-meta">
                     <i className="bi bi-twitter">
@@ -88,13 +96,15 @@ const UserInfo = () => {
                     <i className="bi bi-building-check">
                       <span className="ps-1">Organization</span>
                     </i>
-                    <p>{user.company ? user.company : "null"}</p>
+                    <p>{user.company ? user.company : "No company name"}</p>
                   </div>
                   <div className="user-meta">
                     <i className="bi bi-calendar2-check">
                       <span className="ps-1">Joined Date</span>
                     </i>
                     <p>
+                      {/* creates a JavaScript Date object from the 'created_at' property of
+                     the user object and toLocaleDateString() is method used to format the date */}
                       {new Date(user.created_at).toLocaleDateString("en-US", {
                         day: "2-digit",
                         month: "short",
@@ -106,11 +116,11 @@ const UserInfo = () => {
                     <i className="bi bi-globe">
                       <span className="ps-1">Website</span>
                     </i>
-                    <p>{user.blog ? user.blog : "null"}</p>
+                    <p>{user.blog ? user.blog : "website not available"}</p>
                   </div>
                 </div>
               </div>
-              <div className="userInfo-bottom-right m-5 p-4">
+              <div className="userInfo-bottom-right my-5 ms-4 me-5 p-4">
                 <h4>Bio</h4>
                 <p>
                   {user.bio ? (
