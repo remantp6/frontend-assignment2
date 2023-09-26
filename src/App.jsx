@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SearchForm from './components/searchForm/SearchForm'
-import UserInfo from './pages/userInfo/UserInfo'
+import UserInfo from './pages/UserInfo'
 
 const App = () => {
   return (

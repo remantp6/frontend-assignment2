@@ -1,0 +1,51 @@
+.userInfo-content-top .btn{
+    background-color: rgb(224, 87, 29);
+    padding: 0 32px;
+    height: 42px;
+    border: transparent;
+}
+.userInfo-content-top a{
+    height: 42px;
+}
+.userInfo-content .userInfo-content-bottom{
+    border: 1px solid black;
+    position: relative;
+}
+.userInfo-content-bottom .article{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.userInfo-content-bottom .article p{
+    font-size: 20px;
+    font-weight: 400;
+}
+.userInfo-content-bottom .article img{
+    width: 150px;
+    height: auto;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.userInfo-content-bottom .github-details{
+    font-size: 20px;
+    font-weight: 400;
+}
+.userInfo-content-bottom .github-details span{
+    background-color: rgba(220, 217, 217, 0.813);
+    padding: 4px 12px;
+    border-radius: 3px;
+}
+.userInfo-content-bottom .user-bio-details .userInfo-bottom-left{
+    border: 1px solid rgb(193, 192, 192);
+}
+.user-meta-left p, .user-meta-right p{
+    font-size: 14px;
+    font-weight: 500;
+}
+.userInfo-bottom-left{
+    width: 50%;
+}
+.userInfo-bottom-right{
+    width: 50%;
+    border: 1px solid rgb(193, 192, 192);
+}
