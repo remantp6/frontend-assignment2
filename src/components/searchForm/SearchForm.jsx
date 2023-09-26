@@ -7,6 +7,14 @@ import Title from "../title/Title";
 
 const SearchForm = () => {
   const [username, setUsername] = useState("");
+
+  // function to check if username is not empty before creating the link
+  const handleClick = () => {
+    if (username.trim() !== "") {
+      //changes the window location to specified path if username is not empty
+      window.location.href = `/userInfo/${username}`;
+    }
+  };
   return (
     <>
       <div className="search_form">
@@ -21,7 +29,9 @@ const SearchForm = () => {
                 onChange={(e) => setUsername(e.target.value)}
               />
             </FloatingLabel>
-            <Button variant="warning">Generate</Button>{" "}
+            <Button variant="warning" onClick={handleClick}>
+              Generate
+            </Button>{" "}
           </div>
         </Container>
       </div>
